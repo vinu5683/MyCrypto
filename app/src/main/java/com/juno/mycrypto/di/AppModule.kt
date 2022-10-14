@@ -23,6 +23,7 @@ object AppModule {
         val client: OkHttpClient = OkHttpClient.Builder().addInterceptor(interceptor).build()
 
         return Retrofit.Builder().baseUrl(CryptoConstants.baseUrl)
-            .addConverterFactory(GsonConverterFactory.create()).client(client).build();
+            .addConverterFactory(GsonConverterFactory.create())
+            .client(client).build();
     }
 }
