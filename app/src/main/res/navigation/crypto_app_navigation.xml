@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/crypto_app_navigation"
+    app:startDestination="@id/cryptoHomeFragment">
+
+    <fragment
+        android:id="@+id/cryptoHomeFragment"
+        android:name="com.juno.mycrypto.presentation.components.CryptoHomeFragment"
+        android:label="fragment_crypto_home"
+        tools:layout="@layout/fragment_crypto_home" >
+        <action
+            android:id="@+id/action_cryptoHomeFragment_to_valueStateFragment"
+            app:destination="@id/valueStateFragment" />
+        <action
+            android:id="@+id/action_cryptoHomeFragment_to_emptyStateFragment"
+            app:destination="@id/emptyStateFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/valueStateFragment"
+        android:name="com.juno.mycrypto.presentation.components.ValueStateFragment"
+        android:label="fragment_value_state"
+        tools:layout="@layout/fragment_value_state" />
+    <fragment
+        android:id="@+id/emptyStateFragment"
+        android:name="com.juno.mycrypto.presentation.components.EmptyStateFragment"
+        android:label="fragment_empty_state"
+        tools:layout="@layout/fragment_empty_state" />
+</navigation>

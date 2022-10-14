@@ -1,9 +1,10 @@
-package com.juno.mycrypto
+package com.juno.mycrypto.presentation.components
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
+import com.juno.mycrypto.R
 import com.juno.mycrypto.mvvm.viewmodels.CryptoEmptyStateViewModel
 import com.juno.mycrypto.mvvm.viewmodels.CryptoValueStateViewModel
 import com.juno.mycrypto.utils.Status
@@ -11,7 +12,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class MainActivity : AppCompatActivity() {
+class CryptoHomeActivity : AppCompatActivity() {
 
     private val valueViewModel: CryptoValueStateViewModel by viewModels()
     private val emptyViewModel: CryptoEmptyStateViewModel by viewModels()
