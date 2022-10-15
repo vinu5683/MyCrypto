@@ -79,7 +79,9 @@ dependencies {
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.13.2'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.2'
-    implementation 'com.airbnb.android:lottie:5.2.0'
+
+    implementation("io.coil-kt:coil:1.2.0")
+    implementation("io.coil-kt:coil-svg:1.2.0")
 
 //    //Room DB
 //    def room_version = "2.4.2"

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded_border_rectangle">
+
+    <ImageView
+        android:id="@+id/ivMultiIcon"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:padding="20dp"
+        android:src="@drawable/cryptocurrency_top"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCryptoAccount"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:gravity="bottom|start"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        android:text="Crypto Account"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/tvCryptoAccountSubText"
+        app:layout_constraintEnd_toStartOf="@+id/btnDeposit"
+        app:layout_constraintStart_toEndOf="@+id/ivMultiIcon"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCryptoAccountSubText"
+        android:layout_width="0dp"
+        android:gravity="top|start"
+        android:layout_height="0dp"
+        android:paddingStart="6dp"
+        android:paddingEnd="6dp"
+        android:text="BTC, ETH and more"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnDeposit"
+        app:layout_constraintStart_toEndOf="@+id/ivMultiIcon"
+        app:layout_constraintTop_toBottomOf="@+id/tvCryptoAccount" />
+
+    <Button
+        android:id="@+id/btnDeposit"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:background="@drawable/rounded_border_rectangle_blue"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp"
+        android:text="Deposit"
+        android:textAllCaps="false"
+        android:textColor="#0000FF"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

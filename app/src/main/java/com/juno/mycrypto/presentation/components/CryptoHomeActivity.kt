@@ -17,42 +17,15 @@ import dagger.hilt.android.AndroidEntryPoint
 class CryptoHomeActivity : AppCompatActivity() {
 
 
-    lateinit var binding: ActivityMainBinding
-    private val valueViewModel: CryptoValueStateViewModel by viewModels()
-    private val emptyViewModel: CryptoEmptyStateViewModel by viewModels()
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+    
         binding = ActivityMainBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
+
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
-
-        valueViewModel.getValueStateData()
-        emptyViewModel.getEmptyStateData()
-
-        valueViewModel.cryptoValueStateData.observe(this) {
-            it?.let { resourceWrapper ->
-                when (resourceWrapper.status) {
-                    Status.SUCCESS -> {
-                        Log.d(TAG, "Success: Value Data-> ${resourceWrapper.data}\n\n\n")
-                    }
-                }
-            }
-        }
-
-        emptyViewModel.cryptoEmptyStateData.observe(this) {
-            it?.let { resourceWrapper ->
-                when (resourceWrapper.status) {
-                    Status.SUCCESS -> {
-                        Log.d(TAG, "Success: Empty Data-> ${resourceWrapper.data}\n\n\n")
-                    }
-                }
-            }
-        }
-
-
     }
 
     companion object {

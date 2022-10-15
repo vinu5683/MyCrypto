@@ -1,8 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".presentation.components.EmptyStateFragment">
 
-</FrameLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <include
+                android:id="@+id/cryptoAccountLayout"
+                layout="@layout/crypto_account_multiicon_layout"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/dividerView1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#c4c4c4"
+                app:layout_constraintTop_toBottomOf="@id/cryptoAccountLayout" />
+
+            <TextView
+                android:id="@+id/cryptoHoldingsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Your Crypto Holdings"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/dividerView1" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cryptoHoldingsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_border_rectangle"
+                app:layout_constraintTop_toBottomOf="@+id/cryptoHoldingsTitle" />
+
+            <View
+                android:id="@+id/dividerView2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#c4c4c4"
+                app:layout_constraintTop_toBottomOf="@id/cryptoHoldingsRecyclerView" />
+
+            <TextView
+                android:id="@+id/tvRecentTransactions"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Recent Transactions"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintEnd_toStartOf="@+id/tvViewAll"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerView2" />
+
+            <TextView
+                android:id="@+id/tvViewAll"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:text="View all"
+                android:textColor="@color/blue"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvRecentTransactions"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerView2" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cryptoTransactionsRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvRecentTransactions" />
+
+            <View
+                android:id="@+id/dividerView3"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#c4c4c4"
+                app:layout_constraintTop_toBottomOf="@id/cryptoTransactionsRecyclerView" />
+
+
+            <TextView
+                android:id="@+id/tvCurrentPrices"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Current Prices"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dividerView3" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cryptoCurrentRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintTop_toBottomOf="@+id/tvCurrentPrices" />
+
+            <View
+                android:id="@+id/dividerView4"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="#c4c4c4"
+                app:layout_constraintTop_toBottomOf="@id/cryptoCurrentRecyclerView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>
