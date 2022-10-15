@@ -25,6 +25,7 @@
         android:paddingEnd="6dp"
         android:text="Crypto Account"
         android:textSize="24sp"
+        android:textColor="@color/black"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tvCryptoAccountSubText"
         app:layout_constraintEnd_toStartOf="@+id/btnDeposit"

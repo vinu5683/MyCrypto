@@ -9,9 +9,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.juno.mycrypto.databinding.FragmentEmptyStateBinding
+import com.juno.mycrypto.mvvm.modelclasses.AllTransactionsItem
 import com.juno.mycrypto.mvvm.modelclasses.YourCryptoHoldingsItem
 import com.juno.mycrypto.mvvm.viewmodels.CryptoEmptyStateViewModel
 import com.juno.mycrypto.presentation.adapters.CryptoHoldingAdapterListener
+import com.juno.mycrypto.presentation.adapters.RecentTransactionsAdapter
 import com.juno.mycrypto.presentation.adapters.YourCryptoHoldingsAdapter
 import com.juno.mycrypto.utils.Status
 import dagger.hilt.android.AndroidEntryPoint
@@ -23,9 +25,13 @@ class EmptyStateFragment : Fragment(), CryptoHoldingAdapterListener {
     private lateinit var binding: FragmentEmptyStateBinding
 
     private var holdingList = ArrayList<YourCryptoHoldingsItem>()
+    private var transactionList = ArrayList<AllTransactionsItem>()
 
     private var cryptoHoldingAdapter: YourCryptoHoldingsAdapter =
         YourCryptoHoldingsAdapter(holdingList, this)
+
+    private var recentTransactionsAdapter: RecentTransactionsAdapter =
+        RecentTransactionsAdapter(transactionList)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -43,8 +49,12 @@ class EmptyStateFragment : Fragment(), CryptoHoldingAdapterListener {
 
     private fun initViewsAndAdapters() {
         binding.cryptoHoldingsRecyclerView.apply {
-            layoutManager = LinearLayoutManager(this.context)
+            layoutManager = LinearLayoutManager(context)
             adapter = cryptoHoldingAdapter
+        }
+        binding.cryptoTransactionsRecyclerView.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = recentTransactionsAdapter
         }
     }
 
@@ -65,8 +75,6 @@ class EmptyStateFragment : Fragment(), CryptoHoldingAdapterListener {
                             holdingList.addAll(data.yourCryptoHoldings as ArrayList<YourCryptoHoldingsItem>)
                             cryptoHoldingAdapter.notifyDataSetChanged()
                         }
-
-
                     }
                 }
             }

@@ -1,13 +1,10 @@
 package com.juno.mycrypto.presentation.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.juno.mycrypto.databinding.CryptoHoldingItemLayoutBinding
+import com.juno.mycrypto.databinding.EmptyStateHoldingItemLayoutBinding
 import com.juno.mycrypto.mvvm.modelclasses.YourCryptoHoldingsItem
-import com.juno.mycrypto.utils.PhotoUtils
 import com.juno.mycrypto.utils.PhotoUtils.loadUrl
 
 class YourCryptoHoldingsAdapter(
@@ -21,7 +18,7 @@ class YourCryptoHoldingsAdapter(
         viewType: Int
     ): YourCryptoHoldingsViewHolder {
 
-        val binding = CryptoHoldingItemLayoutBinding.inflate(
+        val binding = EmptyStateHoldingItemLayoutBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
@@ -37,13 +34,13 @@ class YourCryptoHoldingsAdapter(
         return list.size
     }
 
-    class YourCryptoHoldingsViewHolder(private val binding: CryptoHoldingItemLayoutBinding) :
+    class YourCryptoHoldingsViewHolder(private val binding: EmptyStateHoldingItemLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun setData(item: YourCryptoHoldingsItem, listener: CryptoHoldingAdapterListener) {
 
-
-//            PhotoUtils.fetchSVG(binding.ivCryptoIcon.context, item.logo!!, binding.ivCryptoIcon)
-binding.ivCryptoIcon.loadUrl(item.logo!!)
+            item.logo?.let {
+                binding.ivCryptoIcon.loadUrl(it)
+            }
             binding.tvCryptoName.text = item.title
 
             binding.btnDeposit.setOnClickListener {

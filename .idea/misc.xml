@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/NewPros/MyCrypto/app/src/main/res/drawable/bottom_line.xml" value="0.1515" />
         <entry key="..\:/NewPros/MyCrypto/app/src/main/res/drawable/rounded_border_rectangle.xml" value="0.11" />
         <entry key="..\:/NewPros/MyCrypto/app/src/main/res/drawable/rounded_border_rectangle_blue.xml" value="0.11" />
         <entry key="..\:/NewPros/MyCrypto/app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -11,6 +12,8 @@
         <entry key="..\:/NewPros/MyCrypto/app/src/main/res/layout/fragment_crypto_home.xml" value="0.14" />
         <entry key="..\:/NewPros/MyCrypto/app/src/main/res/layout/fragment_empty_state.xml" value="0.25" />
         <entry key="..\:/NewPros/MyCrypto/app/src/main/res/layout/fragment_value_state.xml" value="0.17074275362318841" />
+        <entry key="..\:/NewPros/MyCrypto/app/src/main/res/layout/recent_transaction_item.xml" value="0.2" />
+        <entry key="..\:/NewPros/MyCrypto/app/src/main/res/layout/value_state_holding_item_layout.xml" value="0.19701086956521738" />
       </map>
     </option>
   </component>
