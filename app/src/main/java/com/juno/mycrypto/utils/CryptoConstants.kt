@@ -7,4 +7,7 @@ object CryptoConstants {
     const val valueStateHomeApi = "home"
     const val emptyStateHomeApi = "empty-home"
 
+    const val VALUEADAPTER = "value_adapter"
+    const val EMPTYADAPTER = "empty_adapter"
+
 }

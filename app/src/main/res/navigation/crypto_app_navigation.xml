@@ -26,5 +26,9 @@
         android:id="@+id/emptyStateFragment"
         android:name="com.juno.mycrypto.presentation.components.EmptyStateFragment"
         android:label="fragment_empty_state"
-        tools:layout="@layout/fragment_empty_state" />
+        tools:layout="@layout/fragment_empty_state" >
+        <action
+            android:id="@+id/action_emptyStateFragment_to_valueStateFragment"
+            app:destination="@id/valueStateFragment" />
+    </fragment>
 </navigation>

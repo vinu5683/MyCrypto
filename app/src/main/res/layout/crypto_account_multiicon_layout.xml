@@ -24,8 +24,8 @@
         android:paddingStart="6dp"
         android:paddingEnd="6dp"
         android:text="Crypto Account"
-        android:textSize="24sp"
         android:textColor="@color/black"
+        android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/tvCryptoAccountSubText"
         app:layout_constraintEnd_toStartOf="@+id/btnDeposit"
@@ -35,8 +35,8 @@
     <TextView
         android:id="@+id/tvCryptoAccountSubText"
         android:layout_width="0dp"
-        android:gravity="top|start"
         android:layout_height="0dp"
+        android:gravity="top|start"
         android:paddingStart="6dp"
         android:paddingEnd="6dp"
         android:text="BTC, ETH and more"
@@ -62,5 +62,38 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/tvHoldingValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:gravity="end|center"
+        android:text="$0.00"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/tvHoldingChange"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tvHoldingChange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:drawableStart="@drawable/ic_baseline_trending_up_24"
+        android:drawablePadding="4dp"
+        android:text="$0.00(+0.0%)"
+        android:textColor="#00EA4C"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvHoldingValue" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/grpForValueState"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:constraint_referenced_ids="tvHoldingChange,tvHoldingValue" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

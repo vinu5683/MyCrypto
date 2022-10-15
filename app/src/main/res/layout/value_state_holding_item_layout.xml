@@ -2,7 +2,9 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:padding="5dp">
 
     <ImageView
         android:id="@+id/ivCryptoIcon"
@@ -12,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvTransactionTitle"
+        android:id="@+id/tvCryptoTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
@@ -20,25 +22,25 @@
         android:textColor="@color/black"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tvTransactionSubTitle"
-        app:layout_constraintEnd_toStartOf="@+id/tvTransactionValue"
+        app:layout_constraintBottom_toTopOf="@+id/tvHoldingSubTitle"
+        app:layout_constraintEnd_toStartOf="@+id/tvHoldingValue"
         app:layout_constraintStart_toEndOf="@+id/ivCryptoIcon"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvTransactionSubTitle"
+        android:id="@+id/tvHoldingSubTitle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
         android:text="0.234245 BTC"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/tvTransactionChange"
+        app:layout_constraintEnd_toStartOf="@+id/tvHoldingChange"
         app:layout_constraintStart_toEndOf="@+id/ivCryptoIcon"
-        app:layout_constraintTop_toBottomOf="@+id/tvTransactionTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/tvCryptoTitle" />
 
     <TextView
-        android:id="@+id/tvTransactionValue"
+        android:id="@+id/tvHoldingValue"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="6dp"
@@ -46,13 +48,13 @@
         android:text="$6,3455.22"
         android:textColor="@color/black"
         android:textSize="20sp"
-        app:layout_constraintBottom_toTopOf="@+id/tvTransactionChange"
+        app:layout_constraintBottom_toTopOf="@+id/tvHoldingChange"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvTransactionTitle"
+        app:layout_constraintStart_toEndOf="@+id/tvCryptoTitle"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/tvTransactionChange"
+        android:id="@+id/tvHoldingChange"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="6dp"
@@ -63,8 +65,8 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/tvTransactionSubTitle"
-        app:layout_constraintTop_toBottomOf="@+id/tvTransactionValue" />
+        app:layout_constraintStart_toEndOf="@+id/tvHoldingSubTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvHoldingValue" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

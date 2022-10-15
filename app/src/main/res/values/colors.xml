@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#0000ff</color>
     <color name="divider_line_color">#d4d4d4</color>
+    <color name="red">#FF0000</color>
 </resources>

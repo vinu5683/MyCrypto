@@ -42,6 +42,8 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/cryptoHoldingsRecyclerView"
                 android:layout_width="match_parent"
+                tools:itemCount="4"
+                tools:listitem="@layout/empty_state_holding_item_layout"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/rounded_border_rectangle"

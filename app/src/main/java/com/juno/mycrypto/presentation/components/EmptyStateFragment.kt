@@ -7,14 +7,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.juno.mycrypto.R
 import com.juno.mycrypto.databinding.FragmentEmptyStateBinding
 import com.juno.mycrypto.mvvm.modelclasses.AllTransactionsItem
+import com.juno.mycrypto.mvvm.modelclasses.CryptoPricesItem
 import com.juno.mycrypto.mvvm.modelclasses.YourCryptoHoldingsItem
 import com.juno.mycrypto.mvvm.viewmodels.CryptoEmptyStateViewModel
 import com.juno.mycrypto.presentation.adapters.CryptoHoldingAdapterListener
+import com.juno.mycrypto.presentation.adapters.CurrentPricesAdapter
 import com.juno.mycrypto.presentation.adapters.RecentTransactionsAdapter
 import com.juno.mycrypto.presentation.adapters.YourCryptoHoldingsAdapter
+import com.juno.mycrypto.utils.CryptoConstants.EMPTYADAPTER
 import com.juno.mycrypto.utils.Status
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -25,13 +30,13 @@ class EmptyStateFragment : Fragment(), CryptoHoldingAdapterListener {
     private lateinit var binding: FragmentEmptyStateBinding
 
     private var holdingList = ArrayList<YourCryptoHoldingsItem>()
-    private var transactionList = ArrayList<AllTransactionsItem>()
+    private var cryptoPricesList = ArrayList<CryptoPricesItem>()
 
     private var cryptoHoldingAdapter: YourCryptoHoldingsAdapter =
-        YourCryptoHoldingsAdapter(holdingList, this)
+        YourCryptoHoldingsAdapter(holdingList, this, EMPTYADAPTER)
 
-    private var recentTransactionsAdapter: RecentTransactionsAdapter =
-        RecentTransactionsAdapter(transactionList)
+    private var currentPricesAdapter: CurrentPricesAdapter =
+        CurrentPricesAdapter(cryptoPricesList)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -48,13 +53,28 @@ class EmptyStateFragment : Fragment(), CryptoHoldingAdapterListener {
     }
 
     private fun initViewsAndAdapters() {
+
+        binding.cryptoAccountLayout.btnDeposit.visibility = View.VISIBLE
+        binding.cryptoAccountLayout.grpForValueState.visibility = View.GONE
+
+        binding.tvViewAll.setOnClickListener {
+            Navigation.findNavController(binding.root)
+                .navigate(R.id.action_emptyStateFragment_to_valueStateFragment)
+        }
+
+        binding.cryptoAccountLayout.btnDeposit.setOnClickListener {
+            Navigation.findNavController(binding.root)
+                .navigate(R.id.action_emptyStateFragment_to_valueStateFragment)
+        }
+
         binding.cryptoHoldingsRecyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = cryptoHoldingAdapter
         }
-        binding.cryptoTransactionsRecyclerView.apply {
-            layoutManager = LinearLayoutManager(context)
-            adapter = recentTransactionsAdapter
+
+        binding.cryptoCurrentRecyclerView.apply {
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            adapter = currentPricesAdapter
         }
     }
 
@@ -74,6 +94,10 @@ class EmptyStateFragment : Fragment(), CryptoHoldingAdapterListener {
                             holdingList.clear()
                             holdingList.addAll(data.yourCryptoHoldings as ArrayList<YourCryptoHoldingsItem>)
                             cryptoHoldingAdapter.notifyDataSetChanged()
+
+                            cryptoPricesList.clear()
+                            cryptoPricesList.addAll(data.cryptoPrices as ArrayList<CryptoPricesItem>)
+                            currentPricesAdapter.notifyDataSetChanged()
                         }
                     }
                 }
@@ -82,10 +106,12 @@ class EmptyStateFragment : Fragment(), CryptoHoldingAdapterListener {
     }
 
     override fun onClickDepositBtn(item: YourCryptoHoldingsItem) {
-
+        Navigation.findNavController(binding.root)
+            .navigate(R.id.action_emptyStateFragment_to_valueStateFragment)
     }
 
     override fun onClickBuyBtn(item: YourCryptoHoldingsItem) {
-
+        Navigation.findNavController(binding.root)
+            .navigate(R.id.action_emptyStateFragment_to_valueStateFragment)
     }
 }

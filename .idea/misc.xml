@@ -3,12 +3,20 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/NewPros/MyCrypto/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1515" />
+        <entry key="..\:/NewPros/MyCrypto/app/src/main/res/drawable-v24/rounded_border_rectangle_blue_white.xml" value="0.1515" />
         <entry key="..\:/NewPros/MyCrypto/app/src/main/res/drawable/bottom_line.xml" value="0.1515" />
+        <entry key="..\:/NewPros/MyCrypto/app/src/main/res/drawable/ic_baseline_trending_down_24.xml" value="0.1515" />
+        <entry key="..\:/NewPros/MyCrypto/app/src/main/res/drawable/ic_baseline_trending_up_24.xml" value="0.1515" />
+        <entry key="..\:/NewPros/MyCrypto/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1515" />
+        <entry key="..\:/NewPros/MyCrypto/app/src/main/res/drawable/ripple_item_wraper.xml" value="0.1515" />
         <entry key="..\:/NewPros/MyCrypto/app/src/main/res/drawable/rounded_border_rectangle.xml" value="0.11" />
         <entry key="..\:/NewPros/MyCrypto/app/src/main/res/drawable/rounded_border_rectangle_blue.xml" value="0.11" />
         <entry key="..\:/NewPros/MyCrypto/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/NewPros/MyCrypto/app/src/main/res/layout/crypto_account_multiicon_layout.xml" value="0.25" />
         <entry key="..\:/NewPros/MyCrypto/app/src/main/res/layout/crypto_holding_item_layout.xml" value="0.25" />
+        <entry key="..\:/NewPros/MyCrypto/app/src/main/res/layout/current_prices_item_layout.xml" value="0.5" />
+        <entry key="..\:/NewPros/MyCrypto/app/src/main/res/layout/empty_state_holding_item_layout.xml" value="0.19701086956521738" />
         <entry key="..\:/NewPros/MyCrypto/app/src/main/res/layout/fragment_crypto_home.xml" value="0.14" />
         <entry key="..\:/NewPros/MyCrypto/app/src/main/res/layout/fragment_empty_state.xml" value="0.25" />
         <entry key="..\:/NewPros/MyCrypto/app/src/main/res/layout/fragment_value_state.xml" value="0.17074275362318841" />
